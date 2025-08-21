@@ -18,6 +18,7 @@
     background-position: center;
     background-attachment: fixed;
     color: var(--ghibli-foreground);
+    
   }
   h1,h2,h3{ font-family: 'Merriweather', serif }
   /* dark mode: make text white for better contrast */
