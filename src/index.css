@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root{
+    --ghibli-foreground: #22223b;
+    --ghibli-accent: #f2c078;
+    --ghibli-soft: #f6efe8;
+  }
+  html,body,#root{height:100%}
+  body{
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+   /* Primary: use user-provided image placed at /public/sunflower-ghibli.jpg
+     Fallback: remote Unsplash image if local file is missing */
+   background-image: url('/sunflower-ghibli.jpg'), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=5c3d0db6f097f6a1d4c4b8d9f1a9f0e1');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--ghibli-foreground);
+  }
+  h1,h2,h3{ font-family: 'Merriweather', serif }
+  /* dark mode: make text white for better contrast */
+  .dark body, .dark .card, .dark .app-shell-bg { color: #ffffff }
+  .dark .text-slate-500 { color: rgba(255,255,255,0.75) }
+}
+
+/* small shadcn-like utilities */
+.card { @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-lg shadow p-4 }
+.progress-bg { @apply bg-gray-200/60 dark:bg-slate-700/60 rounded-full h-5 }
+.progress-fill { @apply bg-emerald-500 h-5 rounded-full text-sm text-white flex items-center justify-center }
+
+/* gentle paper texture overlay for content area */
+.app-shell-bg { background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.55)); border-radius: 12px }
+
+/* container to mildly separate content from the busy background */
+.content-shell{ padding: 24px; background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.8)); border-radius: 14px }
+.card h3{ color: #2b2a4a }
+
